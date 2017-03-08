@@ -1,4 +1,4 @@
-Copyright 2017 FireEye, created by Brandon Arvanaghi (https://arvanaghi.com)
+Copyright 2017 FireEye, created by Brandon Arvanaghi ([@arvanaghi](https://twitter.com/arvanaghi "Arvanaghi's Twitter"))
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -133,9 +133,5 @@ Administrative Session  : Does not connect to admin session on remote host
 
 ---
 
-Written by Brandon Arvanaghi
-
-[arvanaghi.com](https://arvanaghi.com)
-
-[@arvanaghi](https://twitter.com/arvanaghi)
+Written by Brandon Arvanaghi ([@arvanaghi](https://twitter.com/arvanaghi "Arvanaghi's Twitter"))
 
