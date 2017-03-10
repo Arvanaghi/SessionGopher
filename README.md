@@ -1,4 +1,4 @@
-Copyright 2017 FireEye, created by Brandon Arvanaghi
+Copyright 2017 FireEye, created by Brandon Arvanaghi ([@arvanaghi](https://twitter.com/arvanaghi))
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -18,7 +18,7 @@ limitations under the License.
 SessionGopher is a PowerShell tool that finds and decrypts saved session information for remote access tools. It has WMI functionality built in so it can be run remotely.
 Its best use case is to identify systems that may connect to Unix systems, jump boxes, or point-of-sale terminals.
 
-SessionGopher works by querying the `HKEY_USERS` hive for all users who have logged onto a domain-joined box at some point. It extracts PuTTY, WinSCP, SuperPuTTY, FileZilla, RDP, and VNC saved session information. It automatically extracts and decrypts WinSCP, FileZilla, and SuperPuTTY saved passwords.
+SessionGopher works by querying the `HKEY_USERS` hive for all users who have logged onto a domain-joined box at some point. It extracts PuTTY, WinSCP, SuperPuTTY, FileZilla, and RDP saved session information. It automatically extracts and decrypts WinSCP, FileZilla, and SuperPuTTY saved passwords.
 When run in Thorough mode, it also searches all drives for PuTTY private key files (.ppk) and extracts all relevant private key information, including the key itself, as well as for Remote Desktop (.rdp) and RSA (.sdtid) files.
 
 ## Usage
