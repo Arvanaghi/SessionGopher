@@ -120,7 +120,7 @@ function Invoke-SessionGopher {
         $MappedUserName = try { (Split-Path -Leaf (Split-Path -Leaf (GetMappedSID))) } catch {}
         $Source = (($RemoteComputer + "\" + $MappedUserName) -Join "")
 
-        # Created for each user found. Contains all PuTTY, WinSCP, FileZilla, RDP information. 
+        # Created for each user found. Contains all sessions information for that user. 
         $UserObject = New-Object PSObject
 
         <#
