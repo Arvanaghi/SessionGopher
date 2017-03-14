@@ -27,7 +27,7 @@
   Domain\username (e.g. superduper.com\a-jerry).
     
   .PARAMETER iL
-  If you wan to supply a list of hosts to run SessionGopher against, provide the path to that file here. Each host should be separated by a newline in the file.
+  If you want to supply a list of hosts to run SessionGopher against, provide the path to that file here. Each host should be separated by a newline in the file.
 
   .PARAMETER Target
   If you only want to run SessionGopher against once specific host.
