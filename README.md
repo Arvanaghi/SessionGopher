@@ -79,7 +79,7 @@ information for that user.
 
 ```
 [+] Digging on Win7-Arvanaghi ...
- WinSCP Sessions
+WinSCP Sessions
 
 Session  : admin-anthony@198.273.212.334
 Hostname : 198.273.212.334
