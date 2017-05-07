@@ -25,6 +25,9 @@
 
   .PARAMETER u
   Domain\username (e.g. superduper.com\a-jerry).
+
+  .PARAMETER p
+  Password for domain user (if username provided).
     
   .PARAMETER iL
   If you want to supply a list of hosts to run SessionGopher against, provide the path to that file here. Each host should be separated by a newline in the file.
@@ -193,7 +196,7 @@ function Invoke-SessionGopher {
               $ArrayOfWinSCPSessions | Select-Object * | Export-CSV -Append -Path ($OutputDirectory + "\WinSCP.csv") -NoTypeInformation
             } else {
               Write-Output "WinSCP Sessions"
-              $ArrayOfWinSCPSessions | Select-Object * | Format-List
+              $ArrayOfWinSCPSessions | Select-Object * | Format-List | Out-String
             }
 
           }
@@ -227,7 +230,7 @@ function Invoke-SessionGopher {
               $ArrayOfPuTTYSessions | Select-Object * | Export-CSV -Append -Path ($OutputDirectory + "\PuTTY.csv") -NoTypeInformation
             } else {
               Write-Output "PuTTY Sessions"
-              $ArrayOfPuTTYSessions | Select-Object * | Format-List
+              $ArrayOfPuTTYSessions | Select-Object * | Format-List | Out-String
             }
 
           }
@@ -261,7 +264,7 @@ function Invoke-SessionGopher {
               $ArrayOfRDPSessions | Select-Object * | Export-CSV -Append -Path ($OutputDirectory + "\RDP.csv") -NoTypeInformation
             } else {
               Write-Output "Microsoft RDP Sessions"
-              $ArrayOfRDPSessions | Select-Object * | Format-List
+              $ArrayOfRDPSessions | Select-Object * | Format-List | Out-String
             }
 
           }
@@ -519,7 +522,7 @@ function ProcessThoroughRemote($FilePathsFound) {
       $ArrayOfPPKFiles | Export-CSV -Append -Path ($OutputDirectory + "\PuTTY ppk Files.csv") -NoTypeInformation
     } else {
       Write-Output "PuTTY Private Key Files (.ppk)"
-      $ArrayOfPPKFiles | Format-List
+      $ArrayOfPPKFiles | Format-List | Out-String
     }
   }
 
@@ -531,7 +534,7 @@ function ProcessThoroughRemote($FilePathsFound) {
       $ArrayOfRDPFiles | Export-CSV -Append -Path ($OutputDirectory + "\Microsoft rdp Files.csv") -NoTypeInformation
     } else {
       Write-Output "Microsoft RDP Connection Files (.rdp)"
-      $ArrayOfRDPFiles | Format-List
+      $ArrayOfRDPFiles | Format-List | Out-String
     }
   }
   if ($ArrayOfsdtidFiles.count -gt 0) {
@@ -542,7 +545,7 @@ function ProcessThoroughRemote($FilePathsFound) {
       $ArrayOfsdtidFiles | Export-CSV -Append -Path ($OutputDirectory + "\RSA sdtid Files.csv") -NoTypeInformation
     } else {
       Write-Output "RSA Tokens (sdtid)"
-      $ArrayOfsdtidFiles | Format-List
+      $ArrayOfsdtidFiles | Format-List | Out-String
     }
 
   }
@@ -569,7 +572,7 @@ function ProcessPuTTYLocal($AllPuTTYSessions) {
     $ArrayOfPuTTYSessions | Export-CSV -Append -Path ($OutputDirectory + "\PuTTY.csv") -NoTypeInformation
   } else {
     Write-Output "PuTTY Sessions"
-    $ArrayOfPuTTYSessions | Format-List
+    $ArrayOfPuTTYSessions | Format-List | Out-String
   }
 
   # Add the array of PuTTY session objects to UserObject
@@ -599,7 +602,7 @@ function ProcessRDPLocal($AllRDPSessions) {
     $ArrayOfRDPSessions | Export-CSV -Append -Path ($OutputDirectory + "\RDP.csv") -NoTypeInformation
   } else {
     Write-Output "Microsoft Remote Desktop (RDP) Sessions"
-    $ArrayOfRDPSessions | Format-List
+    $ArrayOfRDPSessions | Format-List | Out-String
   }
 
   # Add the array of RDP session objects to UserObject
@@ -643,7 +646,7 @@ function ProcessWinSCPLocal($AllWinSCPSessions) {
     $ArrayOfWinSCPSessions | Export-CSV -Append -Path ($OutputDirectory + "\WinSCP.csv") -NoTypeInformation
   } else {
     Write-Output "WinSCP Sessions"
-    $ArrayOfWinSCPSessions | Format-List
+    $ArrayOfWinSCPSessions | Format-List | Out-String
   }
 
   # Add the array of WinSCP session objects to the target user object
@@ -672,7 +675,7 @@ function ProcesssdtidFile($sdtidExtensionFilesINodes) {
       $ArrayOfsdtidFiles | Select-Object * | Export-CSV -Append -Path ($OutputDirectory + "\RSA sdtid Files.csv") -NoTypeInformation
     } else {
       Write-Output "RSA Tokens (sdtid)"
-      $ArrayOfsdtidFiles | Select-Object * | Format-List
+      $ArrayOfsdtidFiles | Select-Object * | Format-List | Out-String
     }
 
   }
@@ -718,7 +721,7 @@ function ProcessRDPFile($RDPExtensionFilesINodes) {
       $ArrayOfRDPFiles | Select-Object * | Export-CSV -Append -Path ($OutputDirectory + "\Microsoft rdp Files.csv") -NoTypeInformation
     } else {
       Write-Output "Microsoft RDP Connection Files (.rdp)"
-      $ArrayOfRDPFiles | Select-Object * | Format-List
+      $ArrayOfRDPFiles | Select-Object * | Format-List | Out-String
     }
 
   }
@@ -758,7 +761,7 @@ function ProcessPPKFile($PPKExtensionFilesINodes) {
       $ArrayOfPPKFiles | Select-Object * | Export-CSV -Append -Path ($OutputDirectory + "\PuTTY ppk Files.csv") -NoTypeInformation
     } else {
       Write-Output "PuTTY Private Key Files (.ppk)"
-      $ArrayOfPPKFiles | Select-Object * | Format-List
+      $ArrayOfPPKFiles | Select-Object * | Format-List | Out-String
     }
 
   }
