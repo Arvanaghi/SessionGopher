@@ -49,13 +49,13 @@ function Invoke-SessionGopher {
       [switch]$AllDomain # Run across all active directory
   )
 
-  Write-Host '
+  Write-Output '
           o_       
          /  ".   SessionGopher
        ,"  _-"      
      ,"   m m         
   ..+     )      Brandon Arvanaghi
-     `m..m       @arvanaghi | arvanaghi.com
+     `m..m       Twitter: @arvanaghi | arvanaghi.com
   '
 
   if ($o) {
@@ -110,6 +110,7 @@ function Invoke-SessionGopher {
       if ($AllDomain) {
         # Extract just the name from the System.DirectoryServices.SearchResult object
         $RemoteComputer = $RemoteComputer.Properties.name
+        if (!$RemoteComputer) { Continue }
       }
 
       Write-Host -NoNewLine -ForegroundColor "DarkGreen" "[+] "
