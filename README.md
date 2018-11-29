@@ -136,3 +136,4 @@ Administrative Session  : Does not connect to admin session on remote host
 
 Written by Brandon Arvanaghi ([@arvanaghi](https://twitter.com/arvanaghi "Arvanaghi's Twitter"))
 
+This code was initially developed at FireEye. However, any subsequent update is done by the author outside of FireEye. 
